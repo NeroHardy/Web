@@ -1,0 +1,27 @@
+.spacing-1{
+  margin-top: 5em;
+}
+
+.spacing-2{
+  margin-top: 1em;
+}
+
+.center{
+  text-align: center;
+}
+
+.text-accent{
+  color: #727272;
+}
+
+body {
+   
+    background-color: #d9d9d9;
+    font-family: verdana,
+                 arial,
+                 helvetica,
+                 san-serif;
+    font-size: ;
+    overflow: -moz-scrollbars-vertical;
+}
+
