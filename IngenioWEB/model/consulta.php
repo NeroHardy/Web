@@ -10,6 +10,6 @@ if ($conexion->connect_errno)
 
 function consultaBD(){
 	global $conexion, $consulta;
-	$sql = 'Select *  from caneros';
+	$sql = 'Select *  from conc_terceros';
 	return $conexion->query($sql);
 }

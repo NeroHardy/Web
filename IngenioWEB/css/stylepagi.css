@@ -1,0 +1,93 @@
+.container{
+    width: 940px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #4CAF50;
+}
+
+th, td {
+    border: 1px solid #bbb;
+    padding: 10px;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: #e5e5e5;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    border: #4CAF50;
+}
+
+.pagination { 
+	margin:0 auto;
+	text-align:center;
+	padding:24px;
+}
+
+.pagination li {
+	display:inline;
+	color:#fff;
+	text-shadow: 0 1px 1px #eee;
+}
+
+.pagination li span {
+	letter-spacing:0.1em;
+	margin:0 6px;
+}
+
+.pagination li a {
+	background:#4CAF50;
+	color:#fff;
+	border:1px solid #5B9E60;
+	padding:10px 12px;
+	text-decoration:none;
+	-moz-border-radius: 6px;
+	border-radius: 3px;
+	text-shadow: 0 1px 1px #eee;
+	margin:0 3px;
+}
+
+.pagination li a:hover {
+	background:white;
+    color: #303438;
+}
+
+.pagination li a:active {
+	background:white;
+    border:none;
+    color: #303438;
+    font-weight: bolder;
+}
+
+.pagination li.active a {
+	background:white;
+    border:none;
+    color: #303438;
+    font-weight: bolder;
+}
+
+.pagination li .titik{
+    color:#303438;
+    font-weight: bolder;
+}
+.pagination li.symbol a{
+    font-weight: bolder;
+    font-size: 16pt;
+    padding:5px 12px 8px 12px;
+}
+.pagination li.disabled{
+    display: none;
+    visibility: hidden;
+}

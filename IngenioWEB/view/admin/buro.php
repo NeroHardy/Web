@@ -1,8 +1,9 @@
 <?php
  //Modulo Administrador
 
-include_once('../../model/consulta.php');
-$consulta =consultaBD();
+include "../../controller/config.php";
+include_once ("../../model/consulta.php");
+$consulta=consultaBD();
   session_start();
 
 
@@ -27,6 +28,7 @@ $consulta =consultaBD();
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/sweetalert.css">
     <link rel="stylesheet" href="../../css/style.css">
+    <!-- link rel="stylesheet" href="../../css/stylepagi.css"> -->
       <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -60,7 +62,7 @@ $consulta =consultaBD();
    <br>
    <br>
    <br>   
- 
+
    
 
 
@@ -76,42 +78,77 @@ $consulta =consultaBD();
 
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
-    <h3>HOME</h3>
-    <p>Some content.</p>
+    <h3>Estados de cuenta</h3>
+    <p>Trabajadores</p>
 
     <div class="row">
       <div class="col-xs-12">
-        <table class="table table-striped">
-          
-          <thead>
-            <tr>
-              <th width="100">Clave del Cañero</th>
-              <th width="600">Nombre</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            while($persona= $consulta->fetch_assoc()){
-
-            ?>
-            <tr>
-              <td><?php echo $persona['clave_canero']; ?></td>
-              <td><?php echo $persona['nombre']; ?></td>
-            </tr>
-            <?php
-
-
-
-          }?>
-          </tbody>
+       <table class="table">
+            <thead>
+                <tr>
+                    <th>clave_cañero</th>
+                    <th>zona</th>
+                    <th>grupo</th>
+                    <th>nombre_grupo</th>
+                    <th>superficie</th>
+                    <th>produccion</th>
+                    <th>variedad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php for( $i = 0; $i < count( $results->data ); $i++ ) : ?>
+                        <tr>
+                                <td><?php echo $results->data[$i]['clave_canero']; ?></td>
+                                <td><?php echo $results->data[$i]['zona']; ?></td>
+                                <td><?php echo $results->data[$i]['grupo']; ?></td>
+                                <td><?php echo $results->data[$i]['nombre_grupo']; ?></td>
+                                <td><?php echo $results->data[$i]['superficie']; ?></td>
+                                <td><?php echo $results->data[$i]['produccion']; ?></td>
+                                <td><?php echo $results->data[$i]['variedad']; ?></td>
+                        </tr>
+                <?php endfor; ?>
+            </tbody>
         </table>
+        <center>
+        <?php echo $paginator->createLinks($links); ?> 
+      </center>
         
       </div>
     </div>
   </div>
   <div id="menu1" class="tab-pane fade">
-    <h3>Menu 1</h3>
-    <p>Some content in menu 1.</p>
+    <h3>---</h3>
+    <p>Saldo de Terceros.</p>
+
+
+        <div class="row">
+          <div class="col-xs-12">
+            
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th width="100">Clave</th>
+                  <th width="100">Concepto</th>
+                  <th width="100">Organización</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                  while ($persona = $consulta->fetch_assoc()) {
+                    ?>
+                    <tr>
+                    <td><?php echo $persona['clave']; ?></td>
+                    <td><?php echo $persona['concepto']; ?></td>
+                    <td><?php echo $persona['organizacion']; ?></td>
+                  </tr>
+                  <?php
+                }
+                 ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
   </div>
   <div id="menu2" class="tab-pane fade">
     <h3>Menu 2</h3>
